@@ -42,7 +42,9 @@ nextISSTimesForMyLocation((error, passTimes) => {
   }
   // success, print out the deets!
   for (let x of passTimes) {
-    console.log(`Next pass at ${x.risetime} for ${x.duration} seconds!`);
+    const datetime = new Date(0);
+    datetime.setUTCSeconds(x.risetime);
+    console.log(`Next pass at ${datetime} for ${x.duration} seconds!`);
   }
   
 });
